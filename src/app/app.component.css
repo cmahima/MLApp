@@ -1,0 +1,40 @@
+#nav-bar {
+  background-color: lightslategray;
+  height: 50px;
+}
+.head-navbar{
+  color: black;
+  font-size: 25px;
+  text-align: center;
+
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: lightslategray;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+
+#para{
+  text-align: center;
+  background-color: lightsteelblue;
+  padding: 30px ;
+}

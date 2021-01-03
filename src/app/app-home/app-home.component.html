@@ -1,0 +1,10 @@
+<div id="wrapper">
+  <div id="c1">
+<h1>Upload csv file here </h1>
+<Ngx-CSVtoJSON (onConvert)="convert($event)" (onFail)="onError($event)"></Ngx-CSVtoJSON>
+  </div>
+
+  <div id="c2">
+  {{convertedObjstr | slice: 0:900}}
+</div>
+</div>

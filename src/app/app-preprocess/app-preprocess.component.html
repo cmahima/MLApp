@@ -1,0 +1,79 @@
+<header>
+  <h2>Select Preprocessing to apply from the dropdown</h2>
+</header>
+<form
+  [formGroup]="form"
+  (ngSubmit)="onSubmit(form.value)">
+  <ul>
+    <li>
+      <label for="Preprocess_1">Preprocess 1</label><br>
+      <select name="Preprocess_1" id="Preprocess_1" formControlName="Preprocess_1">
+        <option *ngFor="let preprocess of lookupLists.preprocess" value="{{preprocess}}">{{preprocess}}</option>
+      </select>
+    </li><br>
+
+    <li>
+      <label for="Preprocess_2">Preprocess 2</label><br>
+      <select name="Preprocess_2" id="Preprocess_2" formControlName="Preprocess_2">
+        <option *ngFor="let preprocess of lookupLists.preprocess " value="{{preprocess}}">{{preprocess}}</option>
+      </select>
+    </li><br>
+
+
+    <li>
+      <label for="Preprocess_3">Preprocess 3</label><br>
+      <select name="Preprocess_3" id="Preprocess_3" formControlName="Preprocess_3">
+        <option *ngFor="let preprocess of lookupLists.preprocess" value="{{preprocess}}">{{preprocess}}</option>
+      </select>
+    </li><br>
+
+
+    <li>
+      <label for="Preprocess_4">Preprocess 4</label><br>
+      <select name="Preprocess_4" id="Preprocess_4" formControlName="Preprocess_4">
+        <option *ngFor="let preprocess of lookupLists.preprocess" value="{{preprocess}}">{{preprocess}}</option>
+      </select>
+    </li>
+
+  </ul>
+  <button type="submit" [disabled]="!form.valid">Save</button>
+</form>
+
+<form *ngIf="askFftParams" [formGroup]="form2"
+      (ngSubmit)="onSubmit2(form2.value)">
+  <p>Please enter parameters for FFT</p>
+  <ul>
+    <li>
+    <label for="minfreq">Minimum Frequency for FFT</label><br>
+    <input type="number" name="minfreq" id="minfreq" formControlName="minfreq">
+  </li>
+    <li>
+      <label for="maxfreq">Max Frequency for FFT</label><br>
+      <input type="number" name="maxfreq" id="maxfreq" formControlName="maxfreq">
+    </li>
+    <li>
+      <label for="srate">Sampling Rate for FFT</label><br>
+      <input type="number" name="srate" id="srate" formControlName="srate">
+    </li>
+  </ul>
+  <button type="submit" [disabled]="!form2.valid">Save</button>
+
+</form>
+
+
+<form *ngIf="timeWindow" [formGroup]="form3"
+      (ngSubmit)="onSubmit3(form3.value)">
+  <p>Please enter parameters for selected preprocessing</p>
+  <ul>
+    <li>
+      <label for="timewin">Time Window</label><br>
+      <input type="number" name="timewin" id="timewin" formControlName="timewin">
+    </li>
+
+  </ul>
+  <button type="submit" [disabled]="!form3.valid">Save</button>
+
+</form>
+<button type="submit" (click)="performPreprocess()">Perform preprocessing</button>
+<!---<p id="c2" *ngIf="convertedObj">{{convertedObj}}</p>--->
+<button type="submit" (click)="checkresp()">check</button>

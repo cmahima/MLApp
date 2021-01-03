@@ -1,0 +1,15 @@
+#wrapper{
+  overflow:auto;
+}
+
+
+#c1{
+  float:left;
+}
+
+
+#c2{
+  background:lightblue;
+  width:700px;
+  float:right;
+}
